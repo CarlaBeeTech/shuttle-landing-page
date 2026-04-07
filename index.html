@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KC Shuttle Link</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>KC Shuttle Link</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="cards">
+  <div class="card">
+    <img src="images/service1.jpg" alt="Airport Shuttle">
+    <p>Airport Transportation</p>
+  </div>
+
+  <div class="card">
+    <img src="images/service2.jpg" alt="Event Shuttle">
+    <p>Event Shuttle (Weddings, Parties)</p>
+  </div>
+
+  <div class="card">
+    <img src="images/service3.jpg" alt="Group Rides">
+    <p>Group & Corporate Rides</p>
+  </div>
+</div>
+
+<section id="services" class="services">
+  <h2>Our Services</h2>
+  <div class="cards">
+    <div class="card">Airport Transportation</div>
+    <div class="card">Event Shuttle (Weddings, Parties)</div>
+    <div class="card">Group & Corporate Rides</div>
+  </div>
+</section>
+
+<section class="about">
+  <h2>Reliable Shuttle Services for You</h2>
+  <p>We provide fast, dependable shuttle services connecting commuters and travelers across Kansas City.</p>
+  <button onclick="scrollToContact()">Contact Us</button>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+    <div class="contact-left">
+      <h2>Contact Us Today</h2>
+      <p>
+        Reach out for fast, reliable shuttle services across Kansas City.
+        We’re here to connect you to key locations and transit hubs.
+      </p>
+
+      <div class="contact-help">
+        <h4>Help</h4>
+        <p>info@kcshuttlelink.com</p>
+      </div>
+    </div>
+
+    <form class="contact-form" action="https://formspree.io/f/mgopqwgn" method="POST">
+  <input type="hidden" name="_subject" value="New KC Shuttle Link Request">
+
+  <label for="firstName">Enter your first name</label>
+  <input type="text" id="firstName" name="first_name" placeholder="Your first name here">
+
+  <label for="email">Provide your email address*</label>
+  <input type="email" id="email" name="email" placeholder="Your email address here" required>
+
+  <div class="form-group">
+    <p class="group-title">What type of transportation do you need?</p>
+    <label><input type="checkbox" name="transportation_type[]" value="Single Ride"> Single Ride</label>
+    <label><input type="checkbox" name="transportation_type[]" value="Round Trip"> Round Trip</label>
+    <label><input type="checkbox" name="transportation_type[]" value="Event Shuttle (Wedding, Party, etc.)"> Event Shuttle (Wedding, Party, etc.)</label>
+    <label><input type="checkbox" name="transportation_type[]" value="Ongoing/Recurring Transportation"> Ongoing/Recurring Transportation</label>
+  </div>
+
+  <label for="locations">Pickup &amp; Drop-Off Location(s)</label>
+  <input type="text" id="locations" name="locations" placeholder="Enter city or full address">
+
+  <label for="serviceDate">Date &amp; Time of Service *</label>
+  <input type="text" id="serviceDate" name="service_date_time" placeholder="MM/DD/YYYY HH:MM" required>
+
+  <div class="form-group">
+    <p class="group-title">Number of Passengers</p>
+    <label><input type="radio" name="passengers" value="1-2"> 1–2</label>
+    <label><input type="radio" name="passengers" value="3-5"> 3–5</label>
+    <label><input type="radio" name="passengers" value="6-10"> 6–10</label>
+    <label><input type="radio" name="passengers" value="10+"> 10+</label>
+  </div>
+
+  <div class="form-group">
+    <p class="group-title">Are you a driver needing transportation or assistance?</p>
+    <label><input type="radio" name="driver_need" value="Yes"> Yes</label>
+    <label><input type="radio" name="driver_need" value="No"> No</label>
+  </div>
+
+  <label for="driverExplain">If yes, please explain:</label>
+  <input type="text" id="driverExplain" name="driver_explanation">
+
+  <label for="additionalInfo">Any Additional Information?</label>
+  <textarea id="additionalInfo" name="additional_information"></textarea>
+
+  <button type="submit" class="contact-btn">Submit your request now</button>
+</form>
+
+<footer>
+  <p>© 2026 KC Shuttle Link</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
