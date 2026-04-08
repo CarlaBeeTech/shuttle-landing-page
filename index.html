@@ -7,38 +7,67 @@
 </head>
 <body>
 
-<header>
+<body>
+
+<header class="main-header">
   <h2>KC Shuttle Link</h2>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
-  </nav>
+
+  <div class="header-right">
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="header-btn">Book Now</a>
+  </div>
 </header>
 
-<div class="cards">
-  <div class="card">
-    <img src="images/service1.jpg" alt="Airport Shuttle">
-    <p>Airport Transportation</p>
+<section class="hero premium-hero">
+  <div class="hero-content">
+    <h1>Reliable Kansas City Shuttle Services</h1>
+    <p>Airport rides, events, and group transportation — on time, every time.</p>
+
+    <div class="hero-buttons">
+            <a href="#contact" class="secondary-btn">Get a Quote</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services premium-services">
+  <div class="section-heading">
+    <p class="section-eyebrow">Our Services</p>
+    <h2>Transportation Designed Around Your Needs</h2>
+    <p>
+      From airport pickups to private events, KC Shuttle Link provides dependable service
+      for riders who want a smoother, more direct transportation experience.
+    </p>
   </div>
 
-  <div class="card">
-    <img src="images/service2.jpg" alt="Event Shuttle">
-    <p>Event Shuttle (Weddings, Parties)</p>
-  </div>
+  <div class="service-grid">
+    <div class="service-card">
+      <img src="images/service1.jpg" alt="Airport transportation">
+      <div class="service-card-body">
+        <h3>Airport Transportation</h3>
+        <p>Reliable pickup and drop-off service for airport travel with direct scheduling.</p>
+      </div>
+    </div>
 
-  <div class="card">
-    <img src="images/service3.jpg" alt="Group Rides">
-    <p>Group & Corporate Rides</p>
-  </div>
-</div>
+    <div class="service-card">
+      <img src="images/service2.jpg" alt="Event shuttle">
+      <div class="service-card-body">
+        <h3>Event Shuttle</h3>
+        <p>Transportation for weddings, private events, parties, and other special occasions.</p>
+      </div>
+    </div>
 
-<section id="services" class="services">
-  <h2>Our Services</h2>
-  <div class="cards">
-    <div class="card">Airport Transportation</div>
-    <div class="card">Event Shuttle (Weddings, Parties)</div>
-    <div class="card">Group & Corporate Rides</div>
+    <div class="service-card">
+      <img src="images/service3.jpg" alt="Group rides">
+      <div class="service-card-body">
+        <h3>Group Rides</h3>
+        <p>Comfortable, dependable rides for small groups needing scheduled transportation.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -47,6 +76,51 @@
   <p>We provide fast, dependable shuttle services connecting commuters and travelers across Kansas City.</p>
   <button onclick="scrollToContact()">Contact Us</button>
 </section>
+
+<section class="trust-strip">
+  <div class="trust-item">
+    <h4>Direct Communication</h4>
+    <p>Speak directly with KC Shuttle Link about your ride details and scheduling.</p>
+  </div>
+  <div class="trust-item">
+    <h4>Reliable Scheduling</h4>
+    <p>Ideal for airport trips, events, and pre-arranged transportation needs.</p>
+  </div>
+  <div class="trust-item">
+    <h4>Professional Service</h4>
+    <p>A cleaner, more personal transportation option for riders who value dependability.</p>
+  </div>
+</section>
+
+<section class="premium-booking">
+  <div class="booking-left">
+    <p class="section-eyebrow">Booking Information</p>
+    <h2>Simple Booking. Direct Confirmation.</h2>
+    <p>
+      Because availability is limited, ride requests are reviewed directly and confirmed once
+      details are approved. A deposit may be required to secure your reservation.
+    </p>
+
+    <ul class="booking-points">
+      <li>Private shuttle service</li>
+      <li>Limited availability</li>
+      <li>Direct phone and text communication</li>
+      <li>Deposit required for certain bookings</li>
+    </ul>
+  </div>
+
+  <div class="booking-right">
+    <div class="booking-box">
+      <h3>Reserve Your Ride</h3>
+      <p>Submit your request and we’ll follow up to confirm availability and next steps.</p>
+      <a href="#contact" class="primary-btn full-btn">Start Request</a>
+      <p class="booking-note">Bookings are confirmed only after details are reviewed.</p>
+    </div>
+  </div>
+</section>
+
+
+
 
 <section id="contact" class="contact-section">
   <div class="contact-container">
@@ -73,12 +147,13 @@
   <input type="email" id="email" name="email" placeholder="Your email address here" required>
 
   <div class="form-group">
-    <p class="group-title">What type of transportation do you need?</p>
-    <label><input type="checkbox" name="transportation_type[]" value="Single Ride"> Single Ride</label>
-    <label><input type="checkbox" name="transportation_type[]" value="Round Trip"> Round Trip</label>
-    <label><input type="checkbox" name="transportation_type[]" value="Event Shuttle (Wedding, Party, etc.)"> Event Shuttle (Wedding, Party, etc.)</label>
-    <label><input type="checkbox" name="transportation_type[]" value="Ongoing/Recurring Transportation"> Ongoing/Recurring Transportation</label>
-  </div>
+  <p class="group-title">What type of transportation do you need?</p>
+
+  <label><input type="checkbox"> Single Ride</label>
+  <label><input type="checkbox"> Round Trip</label>
+  <label><input type="checkbox"> Event Shuttle (Wedding, Party, etc.)</label>
+  <label><input type="checkbox"> Ongoing/Recurring Transportation</label>
+</div>
 
   <label for="locations">Pickup &amp; Drop-Off Location(s)</label>
   <input type="text" id="locations" name="locations" placeholder="Enter city or full address">
@@ -109,8 +184,26 @@
   <button type="submit" class="contact-btn">Submit your request now</button>
 </form>
 
-<footer>
-  <p>© 2026 KC Shuttle Link</p>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h3>KC Shuttle Link</h3>
+      <p>Professional shuttle and transportation service for Kansas City riders.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>info@kcshuttlelink.com</p>
+     
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>
