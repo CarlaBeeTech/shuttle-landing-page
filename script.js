@@ -1,9 +1,32 @@
 function scrollToContact() {
-  document.getElementById("contact").scrollIntoView({
-    behavior: "smooth"
-  });
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
 }
 
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  menu.classList.toggle("open");
+}
+
+// Close mobile menu on outside click
+document.addEventListener("click", function(e) {
+  const menu = document.getElementById("mobileMenu");
+  const btn = document.querySelector(".mobile-menu-btn");
+  if (menu && btn && !menu.contains(e.target) && !btn.contains(e.target)) {
+    menu.classList.remove("open");
+  }
+});
+
+// Shrink header on scroll
+window.addEventListener("scroll", function() {
+  const header = document.querySelector(".main-header");
+  if (window.scrollY > 60) {
+    header.style.padding = "0.6rem 3rem";
+  } else {
+    header.style.padding = "1rem 3rem";
+  }
+});
+
+// ===== GOOGLE MAPS / ROUTE ESTIMATOR (preserved) =====
 let pickupAutocomplete;
 let dropoffAutocomplete;
 let directionsService;
@@ -27,13 +50,17 @@ function initMap() {
   const pickupInput = document.getElementById("pickup");
   const dropoffInput = document.getElementById("dropoff");
 
-  pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, {
-    fields: ["formatted_address", "geometry", "name"],
-  });
+  if (pickupInput) {
+    pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, {
+      fields: ["formatted_address", "geometry", "name"],
+    });
+  }
 
-  dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffInput, {
-    fields: ["formatted_address", "geometry", "name"],
-  });
+  if (dropoffInput) {
+    dropoffAutocomplete = new google.maps.places.Autocomplete(dropoffInput, {
+      fields: ["formatted_address", "geometry", "name"],
+    });
+  }
 }
 
 function calculateRouteEstimate() {
@@ -64,9 +91,7 @@ function calculateRouteEstimate() {
       const leg = response.routes[0].legs[0];
       const distanceText = leg.distance.text;
       const durationText = leg.duration.text;
-
       const miles = leg.distance.value / 1609.34;
-
       const estimate = calculateRate(miles, passengerTier, rideType);
 
       document.getElementById("distanceOutput").textContent = distanceText;
@@ -89,7 +114,5 @@ function calculateRate(miles, passengerTier, rideType) {
   if (rideType === "round") rideTypeFee = 20;
   if (rideType === "event") rideTypeFee = 35;
 
-  let total = baseFare + (miles * perMile) + passengerFee + rideTypeFee;
-
-  return total;
+  return baseFare + (miles * perMile) + passengerFee + rideTypeFee;
 }
